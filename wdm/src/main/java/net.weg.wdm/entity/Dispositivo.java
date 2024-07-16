@@ -1,9 +1,11 @@
 package net.weg.wdm.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.util.List;
 @AllArgsConstructor
@@ -28,6 +30,8 @@ public class Dispositivo {
     /* Com o mappedBy, quando "dispositivo" for registrado ele usa o próprio Id para procurar
     na tabela do banco e se encontrar algo que é seu, ele registra na sua classe */
     @OneToMany(mappedBy = "dispositivo")
+    @JsonIgnore
+    @ToString.Exclude
     private List<DispositivoReservado> reservasDoDispositivo;
     @OneToMany(mappedBy = "dispositivo")
     private List<Manutencao> manutencoes;

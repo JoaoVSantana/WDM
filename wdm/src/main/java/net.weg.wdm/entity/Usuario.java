@@ -22,9 +22,9 @@ public class Usuario {
     @Column(nullable = false)
     private String senha;
     private Boolean habilidato;
-    @OneToMany(mappedBy = "solicitante")
-    @JsonIgnore
-    private List<Reserva> reservas;
+//    @OneToMany()
+//    @JoinColumn(name = "id_solicitante")
+//    private List<SolicitacaoReserva> reservas;
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private TipoUsuario tipo;
