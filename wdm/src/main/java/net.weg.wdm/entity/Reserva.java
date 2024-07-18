@@ -56,7 +56,7 @@ public class Reserva {
     }
 
     public ReservaResponseDTO toDTO(){
-        return new ReservaResponseDTO(this.status.getNOME(), this.numero, this.solicitante.getNome(),
+        return new ReservaResponseDTO(this.status.getNOME(), this.numero,
             this.dispositivoReservados, this.ambiente,this.turma,this.periodo,this.dia,this.comentario);
     }
 
